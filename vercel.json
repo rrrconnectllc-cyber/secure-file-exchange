@@ -14,7 +14,7 @@
     }
   ],
   "env": {
-    "NEXT_PUBLIC_API_URL": "@next_public_api_url",
-    "NEXT_PUBLIC_APP_URL": "@next_public_app_url"
+    "NEXT_PUBLIC_API_URL": "https://api.sfxlegal.org",
+    "NEXT_PUBLIC_APP_URL": "https://sfxlegal.org"
   }
 }
