@@ -10,7 +10,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://api.sfxlegal.org/:path*"
+      "destination": "https://api.sfxlegal.org/api/:path*"
     }
   ],
   "env": {

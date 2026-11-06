@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Header, Footer, Button, Card, Badge } from '@/components';
+import { Header, Footer, Button, Card } from '@/components';
 
 export const metadata = {
   title: 'Pricing',
