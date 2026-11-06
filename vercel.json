@@ -1,9 +1,4 @@
 {
-  "projectSettings": {
-    "installCommand": "npm install",
-    "buildCommand": "npm run build --workspace=@sfx/web",
-    "outputDirectory": "apps/web/.next"
-  },
   "buildCommand": "npm run build --workspace=@sfx/web",
   "outputDirectory": "apps/web/.next",
   "framework": "nextjs",
