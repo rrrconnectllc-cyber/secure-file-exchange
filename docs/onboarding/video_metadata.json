@@ -1,0 +1,199 @@
+{
+  "project": "SFX for Legal - Onboarding Video",
+  "version": "1.0.0",
+  "created": "2026-11-05T20:28:14.758037",
+  "description": "Professional 15-minute setup tutorial for SFX for Legal",
+  "specifications": {
+    "resolution": "1920x1080",
+    "fps": 30,
+    "codec_video": "H.264 (libx264)",
+    "codec_audio": "AAC",
+    "format": "MP4",
+    "total_duration_seconds": 610,
+    "total_duration_minutes": 10
+  },
+  "branding": {
+    "navy": "#1D2749",
+    "cerulean": "#007599"
+  },
+  "segments": [
+    {
+      "id": 0,
+      "name": "Opening",
+      "image": "01-signup.png",
+      "duration_seconds": 20,
+      "narration": "This is the setup for SFX for Legal. You will open a matter, file a document, have someone at the firm approve it, and then ask the client to type their name. The pictures use an example firm, Northline Counsel. Use your own names. Follow the steps in order.",
+      "audio_file": "audio_assets/segment_00.mp3"
+    },
+    {
+      "id": 1,
+      "name": "Segment 1 - Create the firm account",
+      "image": "01-signup.png",
+      "duration_seconds": 30,
+      "narration": "From the front page, choose Open a matter. This screen is Get Started. Type the firm name, your email, and a password of at least 12 characters. Type the password again. Check the terms box. Then choose Create Account. The trial is 14 days. This screen does not ask for a card. Create Account does not open the firm until every field is valid. The next segment shows the three messages people miss.",
+      "audio_file": "audio_assets/segment_01.mp3"
+    },
+    {
+      "id": 2,
+      "name": "Segment 2 - The three checks people skip",
+      "image": "02-signup-skipped.png",
+      "duration_seconds": 30,
+      "narration": "If a check fails, the firm is not created. This picture shows three messages at once. The password must be at least 12 characters. The two passwords must match. You must agree to the terms and privacy policy. A short password and a mismatched confirmation are separate errors. Fix both, and check the box, then choose Create Account again. The firm name and the email are required too.",
+      "audio_file": "audio_assets/segment_02.mp3"
+    },
+    {
+      "id": 3,
+      "name": "Segment 3 - Sign in the next time",
+      "image": "03-login.png",
+      "duration_seconds": 30,
+      "narration": "The next time, choose Sign in. Use the same email and password, then choose Sign In. Remember me keeps you signed in on this browser. Forgot password does not send an email. The reset page says password reset is not available yet. Use the password from signup. A person who was invited cannot use this screen until they have opened their invite link.",
+      "audio_file": "audio_assets/segment_03.mp3"
+    },
+    {
+      "id": 4,
+      "name": "Segment 4 - Read the dashboard first",
+      "image": "04-dashboard.png",
+      "duration_seconds": 25,
+      "narration": "After sign-in you land on the dashboard. It counts open matters, documents waiting for approval, and documents filed this month. The counts in this picture belong to the example firm. Use the counts on your own screen. This is a summary. The waiting list itself is on Approvals, not in this number.",
+      "audio_file": "audio_assets/segment_04.mp3"
+    },
+    {
+      "id": 5,
+      "name": "Segment 5 - Open the matters list",
+      "image": "05-matters.png",
+      "duration_seconds": 20,
+      "narration": "In the left column, choose Matters. These are the cases, and the documents that belong to them. A new firm has an empty list and a button labeled Open matter. This example already has Hartwell acquisition. A document is filed on a matter. There is nowhere to put a client file before a matter exists.",
+      "audio_file": "audio_assets/segment_05.mp3"
+    },
+    {
+      "id": 6,
+      "name": "Segment 6 - A matter needs both names",
+      "image": "06-open-matter.png",
+      "duration_seconds": 25,
+      "narration": "Choose Open matter. Two boxes appear: Matter, and Client. Both are required. The example uses Hartwell acquisition and Hartwell Holdings. Use the real matter and the real client. If either box is empty, the matter is not created.",
+      "audio_file": "audio_assets/segment_06.mp3"
+    },
+    {
+      "id": 7,
+      "name": "Segment 7 - File the document",
+      "image": "07-matter-file.png",
+      "duration_seconds": 30,
+      "narration": "Open the matter. Under Add a document, choose the file, then choose File on this matter. That button stays gray until a file is chosen. The screen refuses a file larger than 6 MB. Filing puts the document on the matter. It does not approve it, and it does not send it to anyone. People stop at the gray button. Choose the file first. The button turns solid after a file is chosen.",
+      "audio_file": "audio_assets/segment_07.mp3"
+    },
+    {
+      "id": 8,
+      "name": "Segment 8 - Ask someone at the firm to approve",
+      "image": "07-matter-file.png",
+      "duration_seconds": 25,
+      "narration": "On that document row, choose Request approval. That adds a waiting decision on Approvals. It does not email anyone, and it does not send the file to the client. Request approval and Copy acceptance link are different buttons. Leave the lower card alone until the document is approved.",
+      "audio_file": "audio_assets/segment_08.mp3"
+    },
+    {
+      "id": 9,
+      "name": "Segment 9 - Approve it, or send it back",
+      "image": "08-approvals.png",
+      "duration_seconds": 35,
+      "narration": "Choose Approvals. A waiting document is marked pending, and it has Approve and Reject. Approve means someone at the firm has released it. Reject leaves it on the matter. It does not record client acceptance. A row that is already decided has no buttons. It cannot be changed from this screen. This picture shows the example file twice: one row still pending, and an older row already approved. Your list shows only the decisions your firm has made. Uploading the file did not approve it. A person chooses Approve or Reject here.",
+      "audio_file": "audio_assets/segment_09.mp3"
+    },
+    {
+      "id": 10,
+      "name": "Segment 10 - Copy the acceptance link after approval",
+      "image": "07-matter-file.png",
+      "duration_seconds": 35,
+      "narration": "Go back to the matter. The lower card asks someone to accept a document. This records a typed name. It does not send the document to DocuSign. Choose the document. Type the signer name and the signer email. Both are required. Then choose Copy acceptance link. The link is copied. It is not mailed. The screen will let you copy a link even if Approvals does not say approved yet. Do not send it until it does. Paste the link into your own message.",
+      "audio_file": "audio_assets/segment_10.mp3"
+    },
+    {
+      "id": 11,
+      "name": "Segment 11 - What the client sees",
+      "image": "17-accept-document.png",
+      "duration_seconds": 30,
+      "narration": "The client does not need an account. The page is titled Accept this document. It names your firm, the file, the matter, and the client. They type their name and choose Record acceptance. The page says this is not a DocuSign ceremony. A name shorter than two characters is refused. In this picture the name was filled in for the example, and the button was not pressed. The client still has to choose Record acceptance.",
+      "audio_file": "audio_assets/segment_11.mp3"
+    },
+    {
+      "id": 12,
+      "name": "Segment 12 - The client is finished when this sentence appears",
+      "image": "18-acceptance-recorded.png",
+      "duration_seconds": 25,
+      "narration": "After a real submission, the page says, Your acceptance is recorded. There is no separate signed PDF on this screen. The record is the typed name, the time, and the document they were shown. This picture is an example that was already recorded. Closing the tab before this sentence appears means it was not recorded. A second submission on a finished link is refused.",
+      "audio_file": "audio_assets/segment_12.mp3"
+    },
+    {
+      "id": 13,
+      "name": "Segment 13 - The firm sees the acceptance",
+      "image": "09-signature-requests.png",
+      "duration_seconds": 25,
+      "narration": "Choose Signature requests. A finished request is marked signed. The row names the document, the signer, the email you entered, the matter, the time, and the name they typed. The page says DocuSign is not connected. A link that has not been submitted stays unsigned. Copying the link does not make it signed.",
+      "audio_file": "audio_assets/segment_13.mp3"
+    },
+    {
+      "id": 14,
+      "name": "Segment 14 - See who can enter the firm",
+      "image": "11-team.png",
+      "duration_seconds": 25,
+      "narration": "Choose Team and client access. The person who created the firm is the Owner, and cannot be removed on this page. An Admin can manage people and settings. A Member can work with the files. The names here are the example firm. Your list should contain only your people. A client who only needs to accept one document does not need a seat. Send them the acceptance link instead.",
+      "audio_file": "audio_assets/segment_14.mp3"
+    },
+    {
+      "id": 15,
+      "name": "Segment 15 - Invite a person",
+      "image": "12-invite.png",
+      "duration_seconds": 25,
+      "narration": "Choose Invite Member. Type their email. Choose Member or Admin. Then choose Send Invite. Member is for someone who should work on files. Admin is for someone who should manage people, settings, and the plan. You do not invite a second Owner. Send Invite only creates the invitation. It does not deliver a message. The next segment is the part people miss.",
+      "audio_file": "audio_assets/segment_15.mp3"
+    },
+    {
+      "id": 16,
+      "name": "Segment 16 - No email is sent",
+      "image": "13-invite-pending.png",
+      "duration_seconds": 30,
+      "narration": "The green notice says no email is sent. Share the link yourself. Choose Copy link and paste it into your own message. Until that person opens the link and creates a password, the row stays Pending. A pending person cannot sign in. Pending does not mean an email is on the way. The link in this picture belongs to the example firm. Copy the link on your own screen. Do not type the address out of the picture.",
+      "audio_file": "audio_assets/segment_16.mp3"
+    },
+    {
+      "id": 17,
+      "name": "Segment 17 - They join by setting a password",
+      "image": "14-accept-invite.png",
+      "duration_seconds": 25,
+      "narration": "Their link opens Accept invitation. It names the firm and the email you invited. They type their name, a password of at least 12 characters, and the same password again. Then they choose Create account and join. If the password is short, or the two boxes differ, the account is not created. After they join, the row changes from Pending to Active, and they can sign in. This picture stops before the button is pressed. The password boxes stay empty.",
+      "audio_file": "audio_assets/segment_17.mp3"
+    },
+    {
+      "id": 18,
+      "name": "Segment 18 - Keep the activity record",
+      "image": "10-compliance.png",
+      "duration_seconds": 25,
+      "narration": "Choose Compliance reports. The list shows who opened a matter, filed a document, requested approval, approved or rejected it, invited someone, and recorded an acceptance. The newest lines are at the top. This is the firm's activity record. It is not a certification, and it is not a legal opinion about the document. A missing line means that action was not recorded.",
+      "audio_file": "audio_assets/segment_18.mp3"
+    },
+    {
+      "id": 19,
+      "name": "Segment 19 - Settings, and the switches that are only saved",
+      "image": "15-settings.png",
+      "duration_seconds": 40,
+      "narration": "Choose Settings, then General. The organization name is saved, and it shows at the top of the signed-in pages. The expiration number and the max-downloads number are saved on this form. A newly filed document is still kept for 30 days, and it can still be downloaded 100 times. Changing the numbers does not change that yet. The switches for password protection, two-factor, and email notifications are saved when you choose Save changes. They do not add a download password, a second code at sign-in, or an email. Leave them as they are during setup. Do not tell a client those controls are protecting the file. Do not choose Delete Organization while you are setting up. That removes the firm and the files under it.",
+      "audio_file": "audio_assets/segment_19.mp3"
+    },
+    {
+      "id": 20,
+      "name": "Segment 20 - Leave billing until you mean to pay",
+      "image": "16-billing.png",
+      "duration_seconds": 30,
+      "narration": "Choose Settings, then Billing, only when you mean to look at the plan. A new firm is on Trial. No card is on file. The date on this card is the example firm's date, not yours. Starter is 29 dollars a month for 3 people. Business is 149 dollars a month for 15 people. Enterprise is arranged from Contact us. Subscribe stays gray unless you are an Owner or an Admin. A gray button does not mean the trial has ended. You do not need a card to open the first matter.",
+      "audio_file": "audio_assets/segment_20.mp3"
+    },
+    {
+      "id": 21,
+      "name": "Closing",
+      "image": "09-signature-requests.png",
+      "duration_seconds": 25,
+      "narration": "You are done when you can sign in, a matter has both names, a document is filed, Approvals shows it as approved, you sent the acceptance link yourself, the client sees the words Your acceptance is recorded, and anyone you invited shows Active rather than Pending. If a numbered step does not match your screen, email hello@securefileexchange.com with the step number. Do not book a call for a short password, a missing client name, a gray File button, or a link you have not copied yet.",
+      "audio_file": "audio_assets/segment_21.mp3"
+    }
+  ],
+  "example_firm": "Northline Counsel",
+  "support_email": "hello@securefileexchange.com"
+}

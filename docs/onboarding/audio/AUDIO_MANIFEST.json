@@ -1,0 +1,167 @@
+﻿{
+    "voice":  "en-US-JennyNeural",
+    "total_files_generated":  22,
+    "total_duration_minutes":  20.3,
+    "region":  "eastus",
+    "total_size_bytes":  2431296,
+    "total_duration_seconds":  1215.8,
+    "segments":  [
+                     {
+                         "segment_number":  0,
+                         "size_bytes":  74016,
+                         "narration_preview":  "This is the setup for SFX for Legal. You will open a matter, file a document, have someone at the firm approve it, and then ask the client to type the",
+                         "filename":  "segment_00.mp3",
+                         "duration_estimate_seconds":  37
+                     },
+                     {
+                         "segment_number":  1,
+                         "size_bytes":  122544,
+                         "narration_preview":  "From the front page, choose Open a matter. This screen is Get Started. Type the firm name, your email, and a password of at least 12 characters. Type ",
+                         "filename":  "segment_01.mp3",
+                         "duration_estimate_seconds":  61.3
+                     },
+                     {
+                         "segment_number":  2,
+                         "size_bytes":  113328,
+                         "narration_preview":  "If a check fails, the firm is not created. This picture shows three messages at once. The password must be at least 12 characters. The two passwords m",
+                         "filename":  "segment_02.mp3",
+                         "duration_estimate_seconds":  56.7
+                     },
+                     {
+                         "segment_number":  3,
+                         "size_bytes":  97920,
+                         "narration_preview":  "The next time, choose Sign in. Use the same email and password, then choose Sign In. Remember me keeps you signed in on this browser. Forgot password ",
+                         "filename":  "segment_03.mp3",
+                         "duration_estimate_seconds":  49
+                     },
+                     {
+                         "segment_number":  4,
+                         "size_bytes":  83664,
+                         "narration_preview":  "After sign-in you land on the dashboard. It counts open matters, documents waiting for approval, and documents filed this month. The counts in this pi",
+                         "filename":  "segment_04.mp3",
+                         "duration_estimate_seconds":  41.8
+                     },
+                     {
+                         "segment_number":  5,
+                         "size_bytes":  84960,
+                         "narration_preview":  "In the left column, choose Matters. These are the cases, and the documents that belong to them. A new firm has an empty list and a button labeled Open",
+                         "filename":  "segment_05.mp3",
+                         "duration_estimate_seconds":  42.5
+                     },
+                     {
+                         "segment_number":  6,
+                         "size_bytes":  73728,
+                         "narration_preview":  "Choose Open matter. Two boxes appear: Matter, and Client. Both are required. The example uses Hartwell acquisition and Hartwell Holdings. Use the real",
+                         "filename":  "segment_06.mp3",
+                         "duration_estimate_seconds":  36.9
+                     },
+                     {
+                         "segment_number":  7,
+                         "size_bytes":  113904,
+                         "narration_preview":  "Open the matter. Under Add a document, choose the file, then choose File on this matter. That button stays gray until a file is chosen. The screen ref",
+                         "filename":  "segment_07.mp3",
+                         "duration_estimate_seconds":  57
+                     },
+                     {
+                         "segment_number":  8,
+                         "size_bytes":  78192,
+                         "narration_preview":  "On that document row, choose Request approval. That adds a waiting decision on Approvals. It does not email anyone, and it does not send the file to t",
+                         "filename":  "segment_08.mp3",
+                         "duration_estimate_seconds":  39.1
+                     },
+                     {
+                         "segment_number":  9,
+                         "size_bytes":  149616,
+                         "narration_preview":  "Choose Approvals. A waiting document is marked pending, and it has Approve and Reject. Approve means someone at the firm has released it. Reject leave",
+                         "filename":  "segment_09.mp3",
+                         "duration_estimate_seconds":  74.8
+                     },
+                     {
+                         "segment_number":  10,
+                         "size_bytes":  138528,
+                         "narration_preview":  "Go back to the matter. The lower card asks someone to accept a document. This records a typed name. It does not send the document to DocuSign. Choose ",
+                         "filename":  "segment_10.mp3",
+                         "duration_estimate_seconds":  69.3
+                     },
+                     {
+                         "segment_number":  11,
+                         "size_bytes":  114768,
+                         "narration_preview":  "The client does not need an account. The page is titled Accept this document. It names your firm, the file, the matter, and the client. They type thei",
+                         "filename":  "segment_11.mp3",
+                         "duration_estimate_seconds":  57.4
+                     },
+                     {
+                         "segment_number":  12,
+                         "size_bytes":  96480,
+                         "narration_preview":  "After a real submission, the page says, Your acceptance is recorded. There is no separate signed PDF on this screen. The record is the typed name, the",
+                         "filename":  "segment_12.mp3",
+                         "duration_estimate_seconds":  48.2
+                     },
+                     {
+                         "segment_number":  13,
+                         "size_bytes":  87120,
+                         "narration_preview":  "Choose Signature requests. A finished request is marked signed. The row names the document, the signer, the email you entered, the matter, the time, a",
+                         "filename":  "segment_13.mp3",
+                         "duration_estimate_seconds":  43.6
+                     },
+                     {
+                         "segment_number":  14,
+                         "size_bytes":  107280,
+                         "narration_preview":  "Choose Team and client access. The person who created the firm is the Owner, and cannot be removed on this page. An Admin can manage people and settin",
+                         "filename":  "segment_14.mp3",
+                         "duration_estimate_seconds":  53.6
+                     },
+                     {
+                         "segment_number":  15,
+                         "size_bytes":  108864,
+                         "narration_preview":  "Choose Invite Member. Type their email. Choose Member or Admin. Then choose Send Invite. Member is for someone who should work on files. Admin is for ",
+                         "filename":  "segment_15.mp3",
+                         "duration_estimate_seconds":  54.4
+                     },
+                     {
+                         "segment_number":  16,
+                         "size_bytes":  115632,
+                         "narration_preview":  "The green notice says no email is sent. Share the link yourself. Choose Copy link and paste it into your own message. Until that person opens the link",
+                         "filename":  "segment_16.mp3",
+                         "duration_estimate_seconds":  57.8
+                     },
+                     {
+                         "segment_number":  17,
+                         "size_bytes":  123696,
+                         "narration_preview":  "Their link opens Accept invitation. It names the firm and the email you invited. They type their name, a password of at least 12 characters, and the s",
+                         "filename":  "segment_17.mp3",
+                         "duration_estimate_seconds":  61.8
+                     },
+                     {
+                         "segment_number":  18,
+                         "size_bytes":  101520,
+                         "narration_preview":  "Choose Compliance reports. The list shows who opened a matter, filed a document, requested approval, approved or rejected it, invited someone, and rec",
+                         "filename":  "segment_18.mp3",
+                         "duration_estimate_seconds":  50.8
+                     },
+                     {
+                         "segment_number":  19,
+                         "size_bytes":  190368,
+                         "narration_preview":  "Choose Settings, then General. The organization name is saved, and it shows at the top of the signed-in pages. The expiration number and the max-downl",
+                         "filename":  "segment_19.mp3",
+                         "duration_estimate_seconds":  95.2
+                     },
+                     {
+                         "segment_number":  20,
+                         "size_bytes":  138960,
+                         "narration_preview":  "Choose Settings, then Billing, only when you mean to look at the plan. A new firm is on Trial. No card is on file. The date on this card is the exampl",
+                         "filename":  "segment_20.mp3",
+                         "duration_estimate_seconds":  69.5
+                     },
+                     {
+                         "segment_number":  21,
+                         "size_bytes":  116208,
+                         "narration_preview":  "You are done when you can sign in, a matter has both names, a document is filed, Approvals shows it as approved, you sent the acceptance link yourself",
+                         "filename":  "segment_21.mp3",
+                         "duration_estimate_seconds":  58.1
+                     }
+                 ],
+    "generated_at":  "2026-11-06T10:53:54.9383543-05:00",
+    "total_size_mb":  2.32,
+    "total_segments":  22
+}

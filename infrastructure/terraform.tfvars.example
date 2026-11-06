@@ -1,0 +1,50 @@
+# Environment Configuration for Phase 9 Staging Deployment
+# Copy this file to terraform.tfvars and update with actual values
+
+environment = "staging"
+aws_region  = "us-east-1"
+app_name    = "secure-file-exchange"
+
+# ECR Image URIs (update after building docker images)
+# Format: 123456789.dkr.ecr.us-east-1.amazonaws.com/sfx-api:latest
+api_image_uri = ""
+web_image_uri = ""
+
+# RDS Configuration
+database_username = "sfx_app"
+database_password = "ChangeMe!@123456"  # Change to strong password
+rds_instance_class   = "db.t4g.medium"
+rds_allocated_storage = 100
+backup_retention_days = 7
+
+# ECS Configuration
+desired_count_api = 2
+desired_count_web = 2
+max_capacity_api = 6
+max_capacity_web = 4
+
+# ElastiCache Configuration
+elasticache_instance_type = "cache.t4g.micro"
+
+# SSL/TLS
+certificate_domain = "staging.example.com"
+
+# CloudWatch Alerts
+cloudwatch_alarm_email = "devops@example.com"
+
+# Feature Flags
+enable_rds_enhanced_monitoring = true
+enable_multi_az = true
+enable_cloudfront = true
+enable_waf = true
+
+# Access Control
+allowed_cidr_blocks = ["0.0.0.0/0"]  # Restrict in production
+
+# Additional Tags
+tags = {
+  Project    = "Secure File Exchange"
+  Team       = "Platform"
+  CostCenter = "Engineering"
+  Owner      = "DevOps"
+}

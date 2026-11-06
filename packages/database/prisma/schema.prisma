@@ -1,0 +1,209 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ====== Users ======
+model User {
+  id            String     @id @default(cuid())
+  email         String     @unique
+  passwordHash  String
+  emailVerified Boolean    @default(false)
+  mfaEnabled    Boolean    @default(false)
+  mfaSecret     String?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  // Relations
+  organizations OrganizationMembership[]
+  files         File[]
+  auditEvents   AuditEvent[]
+  roomsCreated  ExchangeRoom[] @relation("createdBy")
+
+  @@index([email])
+  @@map("users")
+}
+
+// ====== Organizations (Multi-Tenancy) ======
+model Organization {
+  id            String     @id @default(cuid())
+  name          String
+  slug          String     @unique
+  ownerId       String
+  storageQuota  BigInt     @default(107374182400) // 100GB default
+  userLimit     Int        @default(10)
+  guestLimit    Int        @default(50)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  // Relations
+  memberships   OrganizationMembership[]
+  files         File[]
+  rooms         ExchangeRoom[]
+  subscriptions Subscription[]
+  auditEvents   AuditEvent[]
+
+  @@index([slug])
+  @@map("organizations")
+}
+
+model OrganizationMembership {
+  id             String   @id @default(cuid())
+  organizationId String
+  userId         String
+  role           String   @default("member") // owner, admin, member
+  joinedAt       DateTime @default(now())
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, userId])
+  @@index([organizationId])
+  @@index([userId])
+  @@map("organization_memberships")
+}
+
+// ====== Files ======
+model File {
+  id               String   @id @default(cuid())
+  organizationId   String   // Tenant isolation critical
+  roomId           String?
+  storageKey       String   // S3 path
+  filename         String
+  mimeType         String
+  sizeBytes        BigInt
+  status           String   @default("initiated") // initiated, uploading, uploaded, scanning, available, rejected, expired, revoked, deletion_pending, deleted
+  virusScanStatus  String   @default("pending") // pending, clean, infected, error
+  expiresAt        DateTime?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime   @updatedAt
+  createdById      String
+
+  // Relations
+  organization     Organization    @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  createdBy        User            @relation(fields: [createdById], references: [id])
+  room             ExchangeRoom?   @relation(fields: [roomId], references: [id], onDelete: SetNull)
+  accessTokens     FileAccessToken[]
+
+  @@index([organizationId])
+  @@index([roomId])
+  @@index([status])
+  @@map("files")
+}
+
+// ====== Exchange Rooms ======
+model ExchangeRoom {
+  id             String   @id @default(cuid())
+  organizationId String   // Tenant isolation critical
+  name           String
+  description    String?
+  createdById    String
+  expiresAt      DateTime?
+  isArchived     Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Relations
+  organization   Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  createdBy      User             @relation("createdBy", fields: [createdById], references: [id])
+  files          File[]
+  members        RoomMember[]
+
+  @@index([organizationId])
+  @@map("exchange_rooms")
+}
+
+model RoomMember {
+  id               String   @id @default(cuid())
+  roomId           String
+  userId           String?
+  email            String?
+  role             String   @default("viewer") // owner, member, viewer
+  accessExpiresAt  DateTime?
+  canDownload      Boolean  @default(true)
+  downloadLimit    Int?
+  createdAt        DateTime @default(now())
+
+  // Relations
+  room             ExchangeRoom @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId])
+  @@index([email])
+  @@map("room_members")
+}
+
+// ====== File Access Tokens (for external sharing) ======
+model FileAccessToken {
+  id                String   @id @default(cuid())
+  fileId            String
+  createdForEmail   String   // Email this token is intended for
+  token             String   @unique // Hashed token
+  expiresAt         DateTime
+  isSingleUse       Boolean  @default(false)
+  downloadCount     Int      @default(0)
+  downloadLimit     Int?
+  createdAt         DateTime @default(now())
+
+  // Relations
+  file              File     @relation(fields: [fileId], references: [id], onDelete: Cascade)
+
+  @@index([fileId])
+  @@index([expiresAt])
+  @@map("file_access_tokens")
+}
+
+// ====== Billing & Subscriptions ======
+model Subscription {
+  id                   String   @id @default(cuid())
+  organizationId       String   @unique
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+  plan                 String   @default("starter") // starter, business, enterprise
+  status               String   @default("trialing") // trialing, active, past_due, canceled
+  currentPeriodStart   DateTime?
+  currentPeriodEnd     DateTime?
+  trialEnd             DateTime?
+  canceledAt           DateTime?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  // Relations
+  organization         Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId])
+  @@index([status])
+  @@map("subscriptions")
+}
+
+// ====== Audit Logging ======
+model AuditEvent {
+  id             String   @id @default(cuid())
+  organizationId String   // Tenant isolation critical
+  eventType      String   // user.registered, user.login, file.uploaded, file.downloaded, access.revoked, etc.
+  actorId        String?  // User who performed action
+  actorEmail     String?  // Email of actor (for guests)
+  resourceType   String   // user, file, room, org, subscription, etc.
+  resourceId     String   // ID of affected resource
+  details        Json?    // Additional context (NO sensitive data, NO credentials, NO tokens)
+  ipAddress      String?  // Masked IP if available
+  userAgent      String?  // Masked user agent
+  timestamp      DateTime @default(now()) @db.Timestamptz() // Server-generated, always
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  actor          User?        @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([organizationId])
+  @@index([timestamp])
+  @@index([eventType])
+  @@index([actorId])
+  @@map("audit_events")
+}

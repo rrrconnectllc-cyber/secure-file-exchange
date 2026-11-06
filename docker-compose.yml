@@ -1,0 +1,85 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: sfx-postgres
+    environment:
+      POSTGRES_DB: sfx_dev
+      POSTGRES_USER: sfx_user
+      POSTGRES_PASSWORD: sfx_secure_dev_password_123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sfx_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sfx-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: sfx-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sfx-network
+
+  minio:
+    image: minio/minio:latest
+    container_name: sfx-minio
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sfx-network
+
+  clamav:
+    image: clamav/clamav:latest
+    container_name: sfx-clamav
+    ports:
+      - "3310:3310"
+    volumes:
+      - clamav_data:/var/lib/clamav
+    restart: always
+    healthcheck:
+      test: ["CMD", "clamdscan", "--ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - sfx-network
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:
+  clamav_data:
+
+networks:
+  sfx-network:
+    driver: bridge
