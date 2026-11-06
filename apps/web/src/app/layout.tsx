@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono, Newsreader } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import '../styles/globals.css';
 
 const inter = Inter({
@@ -11,14 +11,6 @@ const inter = Inter({
 const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
-  display: 'swap',
-});
-
-const newsreader = Newsreader({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-newsreader',
   display: 'swap',
 });
 
@@ -98,7 +90,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable} ${newsreader.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`} suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

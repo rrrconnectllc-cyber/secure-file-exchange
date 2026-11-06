@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const apiOrigin = process.env.VERCEL ? 'https://api.sfxlegal.org' : 'http://localhost:3002';
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -14,7 +16,7 @@ const nextConfig = {
       beforeFiles: [
         {
           source: '/api/v1/:path*',
-          destination: 'http://localhost:3002/api/v1/:path*',
+          destination: `${apiOrigin}/api/v1/:path*`,
         },
       ],
     };
